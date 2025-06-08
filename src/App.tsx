@@ -1,10 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router";
-import Home from "./pages/Home.tsx";
-import Login from "./pages/Login.tsx";
-import Signup from "./pages/Signup.tsx";
-import AuthLayout from "./layouts/AuthLayout.tsx";
-import AppLayout from "./layouts/AppLayout.tsx";
+import { Home, Login, Signup } from "@pages/index";
+import { AppLayout, AuthLayout } from "@layouts/index";
 
 function App() {
   return (
@@ -19,6 +16,6 @@ function App() {
       </Route>
     </Routes>
   );
-}
+} 
 
 export default App;
