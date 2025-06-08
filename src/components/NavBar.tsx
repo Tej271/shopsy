@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import AddShoppingCartSharpIcon from "@mui/icons-material/AddShoppingCartSharp";
+import { useLocation, useNavigate } from "react-router";
 
 type NavBarPropsType = {
   type: "auth" | "app";
@@ -12,6 +13,13 @@ type NavBarPropsType = {
 
 function NavBar(props: NavBarPropsType) {
   const { type } = props;
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const isLogin = pathname.includes("login");
+
+  const handleAuth = () => {
+    navigate(`/auth/${isLogin ? "signup" : "login"}`);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -23,7 +31,11 @@ function NavBar(props: NavBarPropsType) {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Shopsy
           </Typography>
-          {type === "auth" ? <Button color="inherit">Login</Button> : null}
+          {type === "auth" ? (
+            <Button color="inherit" onClick={handleAuth}>
+              {isLogin ? "Sign Up" : "Log In"}
+            </Button>
+          ) : null}
         </Toolbar>
       </AppBar>
     </Box>
