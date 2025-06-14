@@ -26,9 +26,9 @@
     /* Alias Support */
     "baseUrl": "./src",
     "paths": {
-      "@layouts/*": ["./layouts/*"],
-      "@pages/*": ["./pages/*"],
-      "@components/*": ["./components/*"]
+      "@layouts/*": ["./layouts/index"],
+      "@pages/*": ["./pages/index"],
+      "@components/*": ["./components/index"]
     }
   },
   "include": ["src"]

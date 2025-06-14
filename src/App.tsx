@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router";
-import { Home, Login, Signup } from "@pages/index";
-import { AppLayout, AuthLayout } from "@layouts/index";
+import { Home, Login, Signup } from "@pages/";
+import { AppLayout, AuthLayout } from "@layouts/";
 
 function App() {
   return (
